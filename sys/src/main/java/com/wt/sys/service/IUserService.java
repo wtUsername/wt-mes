@@ -12,5 +12,11 @@ import com.wt.sys.domain.User;
  * @since 2018-08-10
  */
 public interface IUserService extends IService<User> {
-	
+    /**
+     * 查找用户
+     * @param username
+     * @param password
+     * @return
+     */
+    boolean selectByName(String username, String password);
 }

@@ -12,9 +12,11 @@
 package com.wt.controller;
 
 import com.alibaba.druid.util.StringUtils;
+import com.wt.sys.service.IUserService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,6 +37,12 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class HomeController {
     private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
+
+    private final IUserService iUserService;
+    @Autowired
+    public HomeController(IUserService iUserService) {
+        this.iUserService = iUserService;
+    }
 
     @GetMapping(value = {"/home", "/"})
     public String home(){
@@ -64,8 +72,11 @@ public class HomeController {
             redirectAttributes.addFlashAttribute("message", "请输入登录密码");
             return "redirect:/home";
         }
-
-        return "redirect:/home";
+        boolean b = iUserService.selectByName(username,password);
+        if(!b){
+            return "redirect:/home";
+        }
+        return "redirect:/main";
     }
 
 

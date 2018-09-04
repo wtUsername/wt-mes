@@ -17,5 +17,21 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
-	
+
+    /**
+     * 查找用户
+     *
+     * @param username
+     * @param password
+     * @return
+     */
+    @Override
+    public boolean selectByName(String username, String password) {
+        User user = baseMapper.selectByName(username,password);
+        if(user == null){
+            return false;
+        }else {
+            return true;
+        }
+    }
 }
