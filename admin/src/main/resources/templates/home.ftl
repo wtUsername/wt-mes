@@ -6,7 +6,7 @@
 </head>
 <body>
 <section class="g-login u-pos-re">
-    <div style="height: 10%"></div>
+    <div style="height: 20%"></div>
     <div class="g-login-bd">
         <div class="g-login-container">
             <div class="g-login-main">
