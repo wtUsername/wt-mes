@@ -22,5 +22,5 @@ package com.wt.config;
 public interface ConfigConst {
 
 
-    String MAPPER_SCAN = "com.wt.dao*";
+    String MAPPER_SCAN = "com.wt.sys.dao*";
 }

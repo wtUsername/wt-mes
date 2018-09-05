@@ -46,6 +46,7 @@ public class HomeController {
 
     @GetMapping(value = {"/home", "/"})
     public String home(){
+        System.err.print(111);
         return "/home";
     }
 
@@ -76,7 +77,7 @@ public class HomeController {
         if(!b){
             return "redirect:/home";
         }
-        return "redirect:/main";
+        return "/main";
     }
 
 
