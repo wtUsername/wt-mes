@@ -11,13 +11,14 @@
 		<result column="sex" property="sex" />
 		<result column="age" property="age" />
 		<result column="tel" property="tel" />
+		<result column="work_no" property="workNo" />
+		<result column="salt" property="salt" />
 	</resultMap>
 
 	<select id="selectByName" resultMap="BaseResultMap">
 		SELECT * FROM `user`
 		WHERE 1=1
 		and user_name = #{username}
-		and pass_word = #{password}
 	</select>
 
 </mapper>

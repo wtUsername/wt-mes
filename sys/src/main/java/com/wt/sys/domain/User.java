@@ -45,6 +45,15 @@ public class User extends Model<User> {
      * 电话
      */
 	private String tel;
+	/**
+	 * 员工工号
+	 */
+	@TableField("work_no")
+	private String workNo;
+	/**
+	 * 密码盐值
+	 */
+	private String salt;
 
 
 	public Long getId() {
@@ -103,6 +112,22 @@ public class User extends Model<User> {
 		this.tel = tel;
 	}
 
+	public String getWorkNo() {
+		return workNo;
+	}
+
+	public void setWorkNo(String workNo) {
+		this.workNo = workNo;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
+
 	@Override
 	protected Serializable pkVal() {
 		return this.id;
@@ -118,6 +143,8 @@ public class User extends Model<User> {
 			", sex=" + sex +
 			", age=" + age +
 			", tel=" + tel +
+			", workNo=" + workNo +
+			", salt=" + salt +
 			"}";
 	}
 }

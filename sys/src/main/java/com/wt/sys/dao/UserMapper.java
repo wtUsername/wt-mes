@@ -17,8 +17,7 @@ public interface UserMapper extends BaseMapper<User> {
     /**
      * 查找用户
      * @param username
-     * @param password
      * @return
      */
-    User selectByName(@Param("username") String username,@Param("password") String password);
+    User selectByName(@Param("username") String username);
 }

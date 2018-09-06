@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <#include "comment.ftl">
+    <title>主页面</title>
 </head>
 <body>
 <p>hello world!</p>

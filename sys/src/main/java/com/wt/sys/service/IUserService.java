@@ -1,7 +1,10 @@
 package com.wt.sys.service;
 
+import com.google.common.base.Optional;
+
 import com.baomidou.mybatisplus.service.IService;
 import com.wt.sys.domain.User;
+
 
 /**
  * <p>
@@ -15,8 +18,7 @@ public interface IUserService extends IService<User> {
     /**
      * 查找用户
      * @param username
-     * @param password
      * @return
      */
-    boolean selectByName(String username, String password);
+    Optional<User> selectByName(String username);
 }

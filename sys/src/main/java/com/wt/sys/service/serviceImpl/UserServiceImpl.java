@@ -1,11 +1,15 @@
 package com.wt.sys.service.serviceImpl;
 
+import com.google.common.base.Optional;
+
+import com.alibaba.druid.util.StringUtils;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.wt.sys.dao.UserMapper;
 import com.wt.sys.domain.User;
 import com.wt.sys.service.IUserService;
 
 import org.springframework.stereotype.Service;
+
 
 /**
  * <p>
@@ -22,16 +26,17 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
      * 查找用户
      *
      * @param username
-     * @param password
      * @return
      */
     @Override
-    public boolean selectByName(String username, String password) {
-        User user = baseMapper.selectByName(username,password);
-        if(user == null){
-            return false;
-        }else {
-            return true;
+    public Optional<User> selectByName(String username) {
+        if (StringUtils.isEmpty(username)) {
+            return Optional.absent();
         }
+        User user = baseMapper.selectByName(username);
+        if (user == null) {
+            return Optional.absent();
+        }
+        return Optional.of(user);
     }
 }

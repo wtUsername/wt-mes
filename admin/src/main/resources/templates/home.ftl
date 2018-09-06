@@ -3,6 +3,7 @@
 <head>
 <#include "comment.ftl">
 <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+    <title>登录页面</title>
 </head>
 <body>
 <section class="g-login u-pos-re">
