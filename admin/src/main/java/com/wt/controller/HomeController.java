@@ -145,7 +145,7 @@ public class HomeController {
         final ShiroUser shiroUser = ShiroUtil.getUser();
         model.addAttribute("user", shiroUser);
 
-        return "/mian";
+        return "/main";
     }
 
 

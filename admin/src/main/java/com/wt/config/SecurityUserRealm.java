@@ -10,8 +10,6 @@ import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.authc.credential.CredentialsMatcher;
-import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
@@ -21,7 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.jtech.marble.shiro.ShiroUser;
-import com.jtech.marble.util.PasswordUtil;
 
 
 /**
@@ -45,12 +42,12 @@ public class SecurityUserRealm extends AuthorizingRealm {
     /**
      * 设置认证加密方式
      */
-    @Override
-    public void setCredentialsMatcher(CredentialsMatcher credentialsMatcher) {
-        HashedCredentialsMatcher md5CredentialsMatcher = new HashedCredentialsMatcher(PasswordUtil.HASH_ALGORITHM);
-        md5CredentialsMatcher.setHashIterations(PasswordUtil.HASH_INTERATIONS);
-        super.setCredentialsMatcher(md5CredentialsMatcher);
-    }
+//    @Override
+//    public void setCredentialsMatcher(CredentialsMatcher credentialsMatcher) {
+//        HashedCredentialsMatcher md5CredentialsMatcher = new HashedCredentialsMatcher(PasswordUtil.HASH_ALGORITHM);
+//        md5CredentialsMatcher.setHashIterations(PasswordUtil.HASH_INTERATIONS);
+//        super.setCredentialsMatcher(md5CredentialsMatcher);
+//    }
 
     /**
      * 获取授权信息
